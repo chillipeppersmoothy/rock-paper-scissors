@@ -98,5 +98,5 @@ function resetScore() {
     document.body.querySelector(".both-moves").innerHTML = "";
     document.body.querySelector(
         ".user-score"
-    ).innerHTML = `You score is, Wins 0, Losses: 0 and Ties: 0.`;
+    ).innerHTML = `You score Wins 0, Losses: 0 and Ties: 0.`;
 }
