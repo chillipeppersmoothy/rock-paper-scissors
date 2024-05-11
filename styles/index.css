@@ -17,7 +17,9 @@ h1 {
     font-weight: bold;
 }
 
-.move {
+.js-rock,
+.js-paper,
+.js-scissors {
     width: 150px;
     height: 150px;
     cursor: pointer;
@@ -30,13 +32,23 @@ h1 {
     position: relative;
 }
 
-.move > img {
+.js-paper > img,
+.js-scissors > img {
     width: 80px;
     height: 80px;
     margin-top: 10px;
     position: absolute;
-    left: 35px;
+    left: 33px;
     top: 20px;
+}
+
+.js-rock > img {
+    width: 80px;
+    height: 80px;
+    margin-top: 10px;
+    position: absolute;
+    left: 30px;
+    top: 15px;
 }
 
 .pick-emoji {
@@ -44,11 +56,20 @@ h1 {
     height: 80px;
 }
 
-.move > img:hover {
+.js-rock > img:hover {
     width: 100px;
     height: 100px;
     position: absolute;
-    left: 25px;
+    left: 23px;
+    top: 5px;
+}
+
+.js-paper > img:hover,
+.js-scissors > img:hover {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 23px;
     top: 10px;
 }
 

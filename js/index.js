@@ -6,6 +6,37 @@ let defaultScore = {
     ties: 0,
 };
 
+const userPickRock = document.querySelector(".js-rock");
+userPickRock.addEventListener("click", () => {
+    validateResulte("rock");
+});
+
+const userPickPaper = document.querySelector(".js-paper");
+userPickPaper.addEventListener("click", () => {
+    validateResulte("paper");
+});
+
+const userPickScissors = document.querySelector(".js-scissors");
+userPickScissors.addEventListener("click", () => {
+    validateResulte("scissors");
+});
+
+document.body.addEventListener("keydown", (event) => {
+    switch (event.key) {
+        case "r":
+            validateResulte("rock");
+            break;
+        case "p":
+            validateResulte("paper");
+            break;
+        case "s":
+            validateResulte("scissors");
+            break;
+        default:
+            break;
+    }
+});
+
 function calculateComputerMove() {
     const random = Math.ceil(Math.random() * 3);
 
