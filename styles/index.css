@@ -29,8 +29,8 @@ h1 {
     height: 80px;
     margin-top: 10px;
     position: absolute;
-    left: 30px;
-    top: 15px;
+    left: 35px;
+    top: 20px;
 }
 
 .pick-emoji {
@@ -42,8 +42,8 @@ h1 {
     width: 100px;
     height: 100px;
     position: absolute;
-    left: 20px;
-    top: 6px;
+    left: 25px;
+    top: 10px;
 }
 
 .reset-button {
