@@ -85,10 +85,10 @@ function validateResulte(userMove) {
     document.body.querySelector(".result").innerHTML = result + "!";
     document.body.querySelector(
         ".both-moves"
-    ).innerHTML = `Computer pick <Image src="../images/${computerMove}-emoji.png" class="pick-emoji"> and <Image src="../images/${userMove}-emoji.png" class="pick-emoji"> your pick `;
+    ).innerHTML = `Computer pick <Image src="./images/${computerMove}-emoji.png" class="pick-emoji"> and <Image src="./images/${userMove}-emoji.png" class="pick-emoji"> your pick `;
     document.body.querySelector(
         ".user-score"
-    ).innerHTML = `You score is, Wins ${score.wins}, Losses: ${score.losses} and Ties: ${score.ties}.`;
+    ).innerHTML = `You score Wins ${score.wins}, Losses: ${score.losses} and Ties: ${score.ties}.`;
     localStorage.setItem("score", JSON.stringify(score));
 }
 
@@ -98,5 +98,5 @@ function resetScore() {
     document.body.querySelector(".both-moves").innerHTML = "";
     document.body.querySelector(
         ".user-score"
-    ).innerHTML = `You score is, Wins 0, Losses: 0 and Ties: 0.`;
+    ).innerHTML = `You score Wins 0, Losses: 0 and Ties: 0.`;
 }
