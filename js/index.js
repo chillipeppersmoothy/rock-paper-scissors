@@ -1,4 +1,5 @@
 let result;
+
 let defaultScore = {
     wins: 0,
     losses: 0,
@@ -10,11 +11,11 @@ function calculateComputerMove() {
 
     switch (random) {
         case 1:
-            return "Rock";
+            return "rock";
         case 2:
-            return "Paper";
+            return "paper";
         case 3:
-            return "Scissor";
+            return "scissors";
         default:
             break;
     }
@@ -24,17 +25,17 @@ function validateResulte(userMove) {
     const computerMove = calculateComputerMove();
     let score = JSON.parse(localStorage.getItem("score")) ?? defaultScore;
 
-    if (userMove === "Rock") {
+    if (userMove === "rock") {
         switch (computerMove) {
-            case "Rock":
+            case "rock":
                 result = "Tie";
                 score["ties"]++;
                 break;
-            case "Paper":
+            case "paper":
                 result = "You lose";
                 score["losses"]++;
                 break;
-            case "Scissor":
+            case "scissors":
                 result = "You win";
                 score["wins"]++;
                 break;
@@ -43,17 +44,17 @@ function validateResulte(userMove) {
         }
     }
 
-    if (userMove === "Paper") {
+    if (userMove === "paper") {
         switch (computerMove) {
-            case "Rock":
+            case "rock":
                 result = "You win";
                 score["wins"]++;
                 break;
-            case "Paper":
+            case "paper":
                 result = "Tie";
                 score["ties"]++;
                 break;
-            case "Scissor":
+            case "scissors":
                 result = "You lose";
                 score["losses"]++;
                 break;
@@ -62,17 +63,17 @@ function validateResulte(userMove) {
         }
     }
 
-    if (userMove === "Scissor") {
+    if (userMove === "scissors") {
         switch (computerMove) {
-            case "Rock":
+            case "rock":
                 result = "You lose";
                 score["losses"]++;
                 break;
-            case "Paper":
+            case "paper":
                 result = "You win";
                 score["wins"]++;
                 break;
-            case "Scissor":
+            case "scissors":
                 result = "Tie";
                 score["ties"]++;
                 break;
@@ -80,14 +81,15 @@ function validateResulte(userMove) {
                 break;
         }
     }
+
     document.body.querySelector(".result").innerHTML = result + "!";
     document.body.querySelector(
         ".both-moves"
-    ).innerHTML = `Computer picked ${computerMove} and you picked ${userMove}`;
-    localStorage.setItem("score", JSON.stringify(score));
+    ).innerHTML = `Computer pick <Image src="../images/${computerMove}-emoji.png" class="pick-emoji"> and <Image src="../images/${userMove}-emoji.png" class="pick-emoji"> your pick `;
     document.body.querySelector(
         ".user-score"
-    ).innerHTML = `You score is, total wins ${score.wins}, losses: ${score.losses} and ties: ${score.ties}.`;
+    ).innerHTML = `You score is, Wins ${score.wins}, Losses: ${score.losses} and Ties: ${score.ties}.`;
+    localStorage.setItem("score", JSON.stringify(score));
 }
 
 function resetScore() {
@@ -96,5 +98,5 @@ function resetScore() {
     document.body.querySelector(".both-moves").innerHTML = "";
     document.body.querySelector(
         ".user-score"
-    ).innerHTML = `You score is, total wins 0, losses: 0 and ties: 0.`;
+    ).innerHTML = `You score is, Wins 0, Losses: 0 and Ties: 0.`;
 }
